@@ -1,0 +1,142 @@
+/* Reset Básico de Margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo Dark / Estilo Geek */
+body {
+    background-color: #1a1a24;
+    color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6c5ce7;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #a29bfe;
+}
+
+header p {
+    font-size: 14px;
+    color: #b2bec3;
+}
+
+/* Layout Principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Seções (Formulário e Tabela) */
+section {
+    background-color: #2d2d3a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #a29bfe;
+}
+
+/* Formulário de Input */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #4a4a5a;
+    background-color: #1a1a24;
+    color: #fff;
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c5ce7;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-add:hover {
+    background-color: #5b4cc4;
+}
+
+.btn-delete {
+    background-color: #ff7675;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-delete:hover {
+    background-color: #e84393;
+}
+
+/* Tabela de Dados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #4a4a5a;
+}
+
+th {
+    background-color: #1a1a24;
+    color: #a29bfe;
+}
+
+/* Badges de Status */
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.available {
+    background-color: #00b894;
+    color: white;
+}
+
+.empty {
+    background-color: #d63031;
+    color: white;
+}

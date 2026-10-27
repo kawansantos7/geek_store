@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Store - Controle de Estoque</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">👾 Geek Store Stock</div>
+        <p>Dashboard de Controle - *No Cap*</p>
+    </header>
+
+
+    <main class="container">
+  
+        <section class="form-section">
+            <h2>Adicionar Novo Action Figure</h2>
+            <form id="stock-form">
+                <div class="input-group">
+                    <label for="name">Nome do Personagem:</label>
+                    <input type="text" id="name" placeholder="Ex: Naruto Uzumaki Shippuden" required>
+                </div>
+                <div class="input-group">
+                    <label for="category">Franquia/Anime:</label>
+                    <input type="text" id="category" placeholder="Ex: Naruto, Marvel, DBZ" required>
+                </div>
+                <div class="input-group">
+                    <label for="quantity">Quantidade:</label>
+                    <input type="number" id="quantity" min="0" placeholder="Ex: 5" required>
+                </div>
+                <button type="submit" class="btn-add">Adicionar ao Estoque</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Itens em Estoque</h2>
+            <table id="stock-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Franquia</th>
+                        <th>Qtd</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Goku Super Saiyan 4</td>
+                        <td>Dragon Ball GT</td>
+                        <td class="qty-val">12</td>
+                        <td><span class="status available">Disponível</span></td>
+                        <td><button class="btn-delete" onclick="this.parentElement.parentElement.remove()">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Spider-Man (Miles Morales)</td>
+                        <td>Marvel</td>
+                        <td class="qty-val">0</td>
+                        <td><span class="status empty">Esgotado</span></td>
+                        <td><button class="btn-delete" onclick="this.parentElement.parentElement.remove()">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    
+    <script>
+        const form = document.getElementById('stock-form');
+        const tableBody = document.querySelector('#stock-table tbody');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const category = document.getElementById('category').value;
+            const quantity = document.getElementById('quantity').value;
+            
+            const statusText = quantity > 0 ? 'Disponível' : 'Esgotado';
+            const statusClass = quantity > 0 ? 'available' : 'empty';
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${category}</td>
+                <td class="qty-val">${quantity}</td>
+                <td><span class="status ${statusClass}">${statusText}</span></td>
+                <td><button class="btn-delete" onclick="this.parentElement.parentElement.remove()">Deletar</button></td>
+            `;
+
+            tableBody.appendChild(newRow);
+            form.reset();
+        });
+    </script>
+</body>
+</html>
